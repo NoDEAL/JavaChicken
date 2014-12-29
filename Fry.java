@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Parser {
+public class Fry {
   public String parseChickenToString(String line) {
 	String[] splited = line.split("\\s+");
 	int splitedLength = splited.length;
@@ -61,14 +61,14 @@ public class Parser {
   	  BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
   	  String manyChickens;
-  	  Parser parser = new Parser();
+  	  Fry fry = new Fry();
   
 	  while ((manyChickens = bufferedReader.readLine()) != null) {
-  		String parsedChicken = parser.parseChickenToString(manyChickens);
-  		parser.saveAsJava(chickenName, parsedChicken);
+  		String parsedChicken = fry.parseChickenToString(manyChickens);
+  		fry.saveAsJava(chickenName, parsedChicken);
   	  }
 
-	  parser.compile(chickenName);
+	  fry.compile(chickenName);
 	} catch (IOException | InterruptedException e) {
 	  System.out.println(e.getMessage());
 	}
